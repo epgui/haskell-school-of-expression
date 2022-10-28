@@ -1,0 +1,31 @@
+name: haskell-school-of-expression
+version: 0.1.0.0
+github: "epgui/haskell-school-of-expression"
+license: PublicDomain
+author: "Guillaume Pelletier"
+maintainer: "guigui.p@gmail.com"
+
+extra-source-files:
+- README.md
+
+dependencies:
+- base >= 4.15 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  haskell-school-of-expression-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options: ["-threaded", "-rtsopts", "-with-rtsopts=-N", "-fllvm"]
+    dependencies:
+    - haskell-school-of-expression
+
+tests:
+  haskell-school-of-expression-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options: ["-threaded", "-rtsopts", "-with-rtsopts=-N", "-fllvm"]
+    dependencies:
+    - haskell-school-of-expression
